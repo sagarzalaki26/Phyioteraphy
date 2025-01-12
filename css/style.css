@@ -445,11 +445,17 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb .breadcrumb-item a {
+.bg-breadcrumb  .breadcrumb-item a {
     color: var(--bs-white) !important;
 }
 /*** Single Page Hero Header End ***/
-
+.bg-breadcrumbt1{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/t1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 160px 0 60px 0;
+}
 
 /*** Service Start ***/
 .service .service-item {
@@ -1179,3 +1185,5 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+
