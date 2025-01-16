@@ -1,0 +1,302 @@
+body
+{
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f5f5f5;
+ }
+
+ .header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #fff;
+   padding: 10px 20px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   height: 60px;
+ }
+
+ .menu-icon {
+   font-size: 24px;
+   cursor: pointer;
+   margin-right: 20px;
+ }
+ .search-container {
+   display: flex;
+   align-items: center;
+   gap: 10px; /* Increased gap between input and icon */
+ }
+ 
+ .search-container input {
+   width: 90%; /* Increased width to make the search bar wider */
+   height: 40px; /* Increase height for a taller input box */
+   border: 1px solid #ddd;
+   border-radius: 5px;
+ }
+ 
+ .search-container .search-icon {
+   font-size: 18px;
+   color: #777;
+   cursor: pointer;
+ }
+ 
+ 
+ .btn {
+   padding: 10px 20px;
+   color: white;
+   background-color: orange;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+
+ .btn:hover {
+   background-color: darkorange;
+ }
+
+ .sidebar {
+   width: 200px;
+   background-color: #fff;
+   position: fixed;
+   top: 60px;
+   height: calc(100% - 60px);
+   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+ }
+
+ .sidebar h2 {
+   text-align: center;
+   margin-bottom: 30px;
+ }
+
+ .sidebar a {
+   display: block;
+   padding: 10px 15px;
+   color: #333;
+   text-decoration: none;
+   margin-bottom: 10px;
+   border-radius: 5px;
+ }
+
+ .sidebar a:hover {
+   background-color: #f0f0f0;
+ }
+
+ .sidebar a.active {
+   background-color: orange;
+   color: white;
+ }
+
+ .content {
+   margin-left: 320px;
+   margin-right: 100px;
+   padding: 20px;
+ }
+
+ .blog-card {
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   margin-bottom: 15px;
+   padding: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .blog-card .details {
+   flex: 1;
+ }
+
+ .blog-card .details h3 {
+   margin: 0;
+   color: #333;
+ }
+
+ .blog-card .details p {
+   margin: 5px 0 0;
+   color: #777;
+ }
+
+ .blog-card .actions {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+ }
+
+
+
+ @media (max-width: 1200px) {
+   /* For larger tablets/desktops */
+   .header {
+     flex-direction: row;
+     justify-content: space-between;
+     height: 70px;
+   }
+
+   .content {
+     margin-left: 240px;
+     margin-right: 80px;
+   }
+
+   .sidebar {
+     width: 240px;
+   }
+
+   .search-container input {
+     width: 80%;
+   }
+ }
+
+ @media (max-width: 992px) {
+   /* For tablets (portrait) */
+   .header {
+     flex-direction: row;
+     justify-content: space-between;
+     height: 60px;
+   }
+
+   .content {
+     margin-left: 220px;
+     margin-right: 60px;
+   }
+
+   .sidebar {
+     width: 220px;
+   }
+
+   .search-container input {
+     width: 75%;
+   }
+
+   .sidebar h2 {
+     font-size: 18px;
+   }
+ }
+
+ @media (max-width: 768px) {
+   /* For tablets (landscape) */
+   .header {
+     flex-direction: column;
+     justify-content: center;
+     height: auto;
+     padding: 10px 15px;
+   }
+
+   .menu-icon {
+     margin-right: 0;
+   }
+
+   .search-container input {
+     width: 85%;
+   }
+
+   .sidebar {
+     width: 200px;
+   }
+
+   .content {
+     margin-left: 0;
+     margin-right: 0;
+     padding: 15px;
+   }
+
+   .blog-card {
+     flex-direction: column;
+     align-items: flex-start;
+   }
+
+   .blog-card .actions {
+     margin-top: 10px;
+     justify-content: flex-start;
+   }
+ }
+
+ @media (max-width: 480px) {
+   /* For mobile devices */
+   .header {
+     padding: 5px 10px;
+   }
+
+   .search-container input {
+     width: 70%;
+   }
+
+   .sidebar {
+     width: 150px;
+   }
+
+   .sidebar h2 {
+     font-size: 16px;
+   }
+
+   .content {
+     margin-left: 0;
+     margin-right: 0;
+     padding: 10px;
+   }
+
+   .blog-card {
+     padding: 10px;
+     font-size: 14px;
+   }
+
+   .menu-icon {
+     font-size: 28px;
+     margin-right: 10px;
+   }
+
+   .btn {
+     padding: 8px 16px;
+   }
+ }
+
+ @media (max-width: 375px) {
+   /* For very small mobile devices */
+   .search-container input {
+     width: 60%;
+   }
+
+   .sidebar {
+     width: 120px;
+   }
+
+   .sidebar h2 {
+     font-size: 14px;
+   }
+
+   .blog-card {
+     font-size: 12px;
+   }
+
+   .blog-card .details h3 {
+     font-size: 16px;
+   }
+
+   .blog-card .details p {
+     font-size: 12px;
+   }
+
+   .blog-card .actions {
+     font-size: 12px;
+   }
+ }
+
+ /* Fixing content layout on small devices */
+ @media (max-width: 767px) {
+   .content {
+     margin-left: 0 !important; /* Avoid content shifting below sidebar */
+     margin-right: 0 !important; /* Make content fully use available width */
+   }
+ }
+
+
+
+
+ #Blog div input, textarea{
+   width: 50%;
+
+ }
