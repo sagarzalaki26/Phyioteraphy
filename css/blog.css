@@ -1,8 +1,8 @@
-.bg-breadcrumb1  .breadcrumb1-item a {
+.bg-breadcrumb1 .breadcrumb1-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb1{
+.bg-breadcrumb1 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -10,11 +10,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb2  .breadcrum2-item a {
+.bg-breadcrumb2 .breadcrum2-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb2{
+.bg-breadcrumb2 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b2.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb3{
+.bg-breadcrumb3 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -38,7 +38,7 @@
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb4{
+.bg-breadcrumb4 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b4.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -46,11 +46,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb5  .breadcrumb5-item a {
+.bg-breadcrumb5 .breadcrumb5-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb5{
+.bg-breadcrumb5 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b5.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -58,11 +58,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb6  .breadcrumb6-item a {
+.bg-breadcrumb6 .breadcrumb6-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb6{
+.bg-breadcrumb6 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b6.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -70,11 +70,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb7  .breadcrumb7-item a {
+.bg-breadcrumb7 .breadcrumb7-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb7{
+.bg-breadcrumb7 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b7.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -82,11 +82,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb8  .breadcrumb8-item a {
+.bg-breadcrumb8 .breadcrumb8-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb8{
+.bg-breadcrumb8 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b8.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -94,11 +94,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb9  .breadcrumb9-item a {
+.bg-breadcrumb9 .breadcrumb9-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb9{
+.bg-breadcrumb9 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b9.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -106,11 +106,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb10  .breadcrumb10-item a {
+.bg-breadcrumb10 .breadcrumb10-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb10{
+.bg-breadcrumb10 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b10.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -118,11 +118,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb11  .breadcrumb11-item a {
+.bg-breadcrumb11 .breadcrumb11-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb11{
+.bg-breadcrumb11 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b11.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -130,11 +130,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb12  .breadcrumb12-item a {
+.bg-breadcrumb12 .breadcrumb12-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb12{
+.bg-breadcrumb12 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b12.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -142,11 +142,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb13  .breadcrumb13-item a {
+.bg-breadcrumb13 .breadcrumb13-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb13{
+.bg-breadcrumb13 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b13.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -154,11 +154,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb14  .breadcrumb14-item a {
+.bg-breadcrumb14 .breadcrumb14-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb14{
+.bg-breadcrumb14 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b14.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -166,11 +166,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb15  .breadcrumb15-item a {
+.bg-breadcrumb15 .breadcrumb15-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb15{
+.bg-breadcrumb15 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b15\ -\ Copy.webp);
     background-position: center center;
     background-repeat: no-repeat;
@@ -178,11 +178,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb16  .breadcrumb16-item a {
+.bg-breadcrumb16 .breadcrumb16-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb16{
+.bg-breadcrumb16 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b16.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -190,11 +190,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb17  .breadcrumb17-item a {
+.bg-breadcrumb17 .breadcrumb17-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb17{
+.bg-breadcrumb17 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b17.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -202,11 +202,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb18  .breadcrumb18-item a {
+.bg-breadcrumb18 .breadcrumb18-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb18{
+.bg-breadcrumb18 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b18.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -214,11 +214,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb19  .breadcrumb19-item a {
+.bg-breadcrumb19 .breadcrumb19-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb19{
+.bg-breadcrumb19 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b19.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -226,11 +226,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb20  .breadcrumb20-item a {
+.bg-breadcrumb20 .breadcrumb20-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb20{
+.bg-breadcrumb20 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b20.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -238,11 +238,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb21  .breadcrumb21-item a {
+.bg-breadcrumb21 .breadcrumb21-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb21{
+.bg-breadcrumb21 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b21.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -250,11 +250,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb22  .breadcrumb22-item a {
+.bg-breadcrumb22 .breadcrumb22-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb22{
+.bg-breadcrumb22 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b22.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -262,11 +262,11 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumbh23  .breadcrumb23-item a {
+.bg-breadcrumbh23 .breadcrumb23-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb23{
+.bg-breadcrumb23 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b23.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -274,14 +274,15 @@
     padding: 160px 0 60px 0;
 }
 
-.bg-breadcrumb24  .breadcrumb24-item a {
+.bg-breadcrumb24 .breadcrumb24-item a {
     color: var(--bs-white) !important;
 }
 
-.bg-breadcrumb24{
+.bg-breadcrumb24 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/b24.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 160px 0 60px 0;
 }
+    

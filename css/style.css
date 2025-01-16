@@ -1045,7 +1045,7 @@
 }
 
 .blog .blog-item:hover .blog-img::after {
-    background: rgba(25, 135, 84);
+    background: rgba(25, 135, 84, 0.511);
 }
 
 .blog .blog-item .blog-centent {
