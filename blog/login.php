@@ -1,24 +1,24 @@
 <?php
-include 'db.php';
 session_start();
+require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = $_POST['password'];
 
-    // Query to check username and plain password
-    $result = $conn->query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = mysqli_query($conn, $query);
+    $user = mysqli_fetch_assoc($result);
 
-    if ($result->num_rows > 0) {
-        $_SESSION['user_id'] = $result->fetch_assoc()['id'];
-        header("Location: dashboard.php");
+    if ($user) {
+        $_SESSION['user_id'] = $user['id'];
+        header("Location: index.php");
+        exit();
     } else {
-        $error = "Invalid username or password!";
+        $error = "Invalid credentials";
     }
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">

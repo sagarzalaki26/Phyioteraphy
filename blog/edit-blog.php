@@ -1,3 +1,55 @@
+<?php
+session_start();
+require 'db.php';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$blog_id = intval($_GET['id']);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $content = mysqli_real_escape_string($conn, $_POST['content']);
+
+    // Image upload logic
+    $featured_image = '';
+    if (isset($_FILES['featured_image']) && $_FILES['featured_image']['error'] == 0) {
+        $upload_dir = 'uploads/';
+        $filename = uniqid() . '_' . basename($_FILES['featured_image']['name']);
+        $upload_path = $upload_dir . $filename;
+        
+        if (move_uploaded_file($_FILES['featured_image']['tmp_name'], $upload_path)) {
+            $featured_image = mysqli_real_escape_string($conn, $upload_path);
+            
+            // Delete old image if exists
+            $old_image_query = "SELECT featured_image FROM blogs WHERE id = $blog_id";
+            $old_image_result = mysqli_query($conn, $old_image_query);
+            $old_image = mysqli_fetch_assoc($old_image_result);
+            if (!empty($old_image['featured_image']) && file_exists($old_image['featured_image'])) {
+                unlink($old_image['featured_image']);
+            }
+
+            // Update query with new image
+            $query = "UPDATE blogs SET title='$title', content='$content', featured_image='$featured_image' WHERE id=$blog_id";
+        }
+    } else {
+        // Update query without changing image
+        $query = "UPDATE blogs SET title='$title', content='$content' WHERE id=$blog_id";
+    }
+
+    mysqli_query($conn, $query);
+    header("Location: blog.php");
+    exit();
+}
+
+$query = "SELECT * FROM blogs WHERE id = $blog_id";
+$result = mysqli_query($conn, $query);
+$blog = mysqli_fetch_assoc($result);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +106,7 @@
                 class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">3</span>
             </button>
             <div class="flex items-center">
-              <img
+              <img  
                 src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a young business person with a warm smile, wearing business attire, against a neutral background&width=40&height=40&orientation=squarish&flag=b052253e-65a0-4186-b916-40976739feb4&flag=0bfeb957-0588-4149-acd4-82b9be318801"
                 alt="Profile" class="w-8 h-8 rounded-full" />
               <span class="ml-2 text-sm font-medium text-gray-700">John Smith</span>
@@ -64,23 +116,27 @@
       </header>
       <main class="p-6">
         <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-          <form class="space-y-6">
-            <div><label class="block text-sm font-medium text-gray-700 mb-2">Blog Title</label><input type="text"
-                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-green-500 focus:border-green-500" />
+          <form class="space-y-6" method="post" enctype="multipart/form-data">
+            <div><label class="block text-sm font-medium text-gray-700 mb-2">Blog Title</label><input type="text" value="<?= htmlspecialchars($blog['title']) ?>"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-green-500 focus:border-green-500" name="title" />
             </div>
             <div><label class="block text-sm font-medium text-gray-700 mb-2">Blog Image</label>
-              <input type="file"
+              <input type="file" name="featured_image"
               class="w-full border border-gray-300 rounded-lg p-3 focus:ring-green-500 focus:border-green-500" />
             </div>
-            <div><label class="block text-sm font-medium text-gray-700 mb-2">Publication Date</label><input type="date"
-                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-green-500 focus:border-green-500" />
-            </div>
-            <div><label class="block text-sm font-medium text-gray-700 mb-2">Blog Content</label><textarea rows="10"
-                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-green-500 focus:border-green-500"></textarea>
+            <?php if(!empty($blog['featured_image'])): ?>
+            <img src="<?= htmlspecialchars($blog['featured_image']) ?>" width="200">
+        <?php endif; ?>
+            <div><label class="block text-sm font-medium text-gray-700 mb-2">Blog Content</label><textarea name="content" id="editor"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:ring-green-500 focus:border-green-500"><?= $blog['content'] ?></textarea>
             </div>
             <div class="flex justify-end"><button type="submit"
                 class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">Publish Post</button></div>
           </form>
+          <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
         </div>
       </main>
     </div>
