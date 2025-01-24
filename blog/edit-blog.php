@@ -77,19 +77,19 @@ $blog = mysqli_fetch_assoc($result);
         </button>
       </div>
       <nav class="mt-6 px-4">
-        <a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg mb-2">
+        <a href="index.php" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg mb-2">
           <i class="fas fa-home w-5"></i>
           <span class="ml-3">Dashboard</span>
         </a>
-        <a href="Add-blog.html" class="  active flex items-center px-4 py-3 text-green-600 bg-green-50 rounded-lg mb-2">
+        <a href="Add-blog.php" class="  active flex items-center px-4 py-3 text-green-600 bg-green-50 rounded-lg mb-2">
           <i class="fas fa-plus-circle w-5"></i>
           <span class="ml-3">New Post</span>
         </a>
-        <a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg mb-2">
+        <a href="blog.php" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg mb-2">
           <i class="fas fa-list w-5"></i>
           <span class="ml-3">All Posts</span>
         </a>
-        <a href="profile.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+        <a href="profile.php" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg">
           <i class="fas fa-user w-5"></i>
           <span class="ml-3">Profile</span>
         </a>

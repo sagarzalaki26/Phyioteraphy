@@ -1,3 +1,11 @@
+<?php
+require 'blog/db.php';
+$query = "SELECT * FROM blogs ORDER BY created_at DESC";
+$result = mysqli_query($conn, $query);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -143,10 +151,15 @@
                     necessitatibus saepe in ab? Repellat!</p>
             </div>
             <div class="row g-4 mb-4 mt-4 justify-content-center">
+                <?php while ($blog = mysqli_fetch_assoc($result)): ?>
+
+                
+                
+                
                 <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="blog-item rounded">
                         <div class="blog-img">
-                            <img src="img/b1.jpg" class="img-fluid w-100" alt="Image">
+                            <img src="blog/<?= htmlspecialchars($blog['featured_image']) ?>" class="img-fluid w-100" alt="Image">
                         </div>
                         <div class="blog-centent p-4">
                             <div class="d-flex justify-content-between mb-4">
@@ -154,51 +167,27 @@
                                 </p>
                                 
                             </div>
-                            <h4>How to Stay Active During the Winter Months</h4>
+                            <h4><?= htmlspecialchars($blog['title']) ?></h4>
                             <p class="my-4"></p>
-                            <a href="./b1.html"
+                            <a href="b1.php?id=<?= $blog['id'] ?>"
                                 class="btn btn-success rounded-pill text-white py-2 px-4 mb-1">Read
                                 More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="blog-item rounded">
-                        <div class="blog-img">
-                            <img src="img/b2.jpg" class="img-fluid w-100" alt="Image">
-                        </div>
-                        <div class="blog-centent p-4">
-                            <div class="d-flex justify-content-between mb-4">
-                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-success"></i> 01 Jan 2045
-                                </p>
-                               
-                            </div>
-                            <h4>Graston Technique for Pain Relief: How It Works and What to
-                                Expect</h4>
-                            <p class="my-4"></p>
-                            <a href="b1.html"
-                                class="btn btn-success rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="blog-item rounded">
-                        <div class="blog-img">
-                            <img src="img/b3.jpg" class="img-fluid w-100" alt="Image">
-                        </div>
-                        <div class="blog-centent p-4">
-                            <div class="d-flex justify-content-between mb-4">
-                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-success"></i> 01 Jan 2045
-                                </p>
-                                
-                            </div>
-                            <h4>What to Expect After a Concussion from a Motor Vehicle Accident</h4>
-                            <p class="my-4"></p>
-                            <a  href="b1.html"
-                                class="btn btn-success rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                
+                <?php endwhile; ?>
+
+                
+                
+                
+                
+                
+               
+
+
+
+
             </div>
         </div>
     </div>

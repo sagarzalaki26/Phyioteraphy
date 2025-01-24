@@ -1,3 +1,13 @@
+<?php
+require 'blog/db.php';
+$blog_id = intval($_GET['id']);
+$query = "SELECT * FROM blogs WHERE id = $blog_id";
+$result = mysqli_query($conn, $query);
+$blog = mysqli_fetch_assoc($result);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +15,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./img/blog-3.jpg" type="image/x-icon">
-    <title>ht-10</title>
+    <title>b1</title>
 </head>
 
 <body>
-    <!DOCTYPE html>
+    <!DOCTYPE html> 
     <html lang="en">
 
     <head>
@@ -38,10 +47,11 @@
 
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style2.css">
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/blog.css">
         <!-- <style>
             /* Custom hover effect */
             .wow li:hover {
@@ -67,12 +77,12 @@
             <div class="row gx-0 align-items-center" style="height: 45px;">
                 <div class="col-lg-8 text-center text-lg-start mb-lg-0">
                     <div class="d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-success me-2"></i>Find
+                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find
                             A Location</a>
                         <a href="#" class="text-light me-4"><i
-                                class="fas fa-phone-alt text-success me-2"></i>+01234567890</a>
+                                class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
                         <a href="#" class="text-light me-0"><i
-                                class="fas fa-envelope text-success me-2"></i>Example@gmail.com</a>
+                                class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
                     </div>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
@@ -96,7 +106,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-success m-0"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapathe's Clinic</h1>
+                    <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Terapia</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -120,8 +130,8 @@
                         </div>
                         <a href="contact.html" class="nav-item nav-link ">Contact Us</a>
                     </div>
-                    <a href="appointment.html" 
-                        class="btn btn-success rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book
+                    <a href="appointment.html"
+                        class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book
                         Appointment</a>
                 </div>
             </nav>
@@ -130,13 +140,14 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumbht10" id="ht2">
+        <div class="container-fluid bg-breadcrumb1" id="ht2" style=" background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(blog/<?= htmlspecialchars($blog['featured_image']) ?>);">
+
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Shockwave Therapy in Edmonton
-                    </h1>
+                <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s"><?= htmlspecialchars($blog['title']) ?></h1>
                     <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active text-success">Contact</li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item active text-primary">Blog</li>
                     </ol>
             </div>
         </div>
@@ -146,136 +157,15 @@
             <div class="container mt-4 ">
                 <div class="row ">
                     <div class="col-8  ">
-                        <!-- <h1 class="display-3 mb-6 mt-4 wow  fadeInLeft" data-wow-delay="0.1s">Deep Tissue Massage
-                            Therapy Edmonton</h1> -->
-                        <div class="wow mt-4 fadeInLeft" data-wow-delay="0.2s">
-                            <h4 class="mb-4  wow mt-4 fadeInLeft" data-wow-delay="0.2s">
-                                Radial Shockwave Therapy</h4>
-                            <p class="mb-3 mt-2">In Edmonton, Radial shockwave therapy is an integrative tool used in
-                                physiotherapy, orthopedics, and sports medicine to provide quick pain relief and
-                                establish flexibility. Without consulting a surgical therapist, it is a perfect therapy
-                                that assists in curing and regaining distinct signs causing chronic and severe pain.
-                            </p>
-                            <p class="mb-3 mt-2">If you will like to know more about this form of therapy and how you
-                                can benefit from it, Contact Family Physiotherapy as soon as possible. Radial therapy is
-                                safe, non-invasive, and very effective in relieving pain in the body. </p>
-                        </div>
+                        <?= $blog['content'] ?>
 
-                        <div class="wow mt-5 fadeInLeft" data-wow-delay="0.3s">
-                            <h4>How does shockwave therapy work?</h4>
-                            <p class="mb-3 mt-3">Shockwave therapy covers a massive variety of indications. Acoustic
-                                waves produced or used in shockwave therapy activate the fast healing and interaction
-                                with the tissue that fixes tissue and cell growth in the body system. Our Family Physio
-                                Radial Shockwave Therapy in Edmonton center offers you this therapy, which can help you
-                                in- </p>
-                        </div>
 
-                        <div class="wow mt-5 fadeInLeft" data-wow-delay="0.4s">
 
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;">New Blood Vessel
-                                    Formation– </span>The nutrient bloodstream is essential in the body to begin and
-                                uphold the restoration progress of the injured tissue. The claim is that acoustic waves
-                                can produce microvessel separations in ligaments and bones.</li>
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;">Reversal of chronic
-                                    inflammation–</span>Most cells are unique mechanisms of the provocative procedure.
-                                The creation of dominant acoustic waves may improve their motion. </li>
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;">Stimulation of collagen
-                                    production– </span> Shockwave treatment hastens procollagen synthesis. Forming an
-                                adequate quantity of collagen is a requirement for repairing the injured cytoskeletal
-                                and ligamentous structures. </li>
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;">Release of trigger
-                                    points–</span> Trigger points remain the primary reason for aching in the collar,
-                                backbone, appendages, and shoulder. Delivered acoustic strength frees the calcium pump
-                                and therefore converses the metabolic predicament in the myofilaments and releases the
-                                trigger points.</li>
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;">Dissolution of calcified
-                                    fibroblasts–</span>Calcium build-up is most frequently the outcome of the
-                                micro-tears or shock to a ligament. Acoustic waves break up the current calcifications.
-                                With Shockwave therapy near you, you can treat many ailments in the body. </li>
-                        </div>
 
-                        <div class="wow mt-5 fadeInLeft" data-wow-delay="0.4s">
-                            <h4 class="mt-3 mb-3">What conditions can be treated?</h4>
-                            <p class="mb-3 mt-2">Radial shockwave therapy can treat one or more various musculoskeletal
-                                conditions. The treatment is incredibly diverse and can treat many health issues. It
-                                includes hip pain, calcifications, heel spur and tennis elbow. The conditions that can
-                                be treated include:</p>
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;">Tennis elbow–</span>This
-                                is a continuous disorder in a few percentages of the world population. The conventional
-                                treatment for this is getting adequate rest. However, with shockwave therapy machines,
-                                you can get pain relief and a cure.</li>
 
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;">Calcifications–</span>
-                                Calcifications instigate calcifying tendinitis lingering agony disorder in cuff tendons.
-                                This situation causes a range of motion and restrictions.
-                            </li>
-
-                            <li class="mb-2 mt-2"><span style="font-weight: 700; color: black;"> Hip pain–</span>
-                                As you grow, the cartilage can become more damaged. The ligaments and muscles in the hip
-                                can be overworked. The hip bone becomes broken caused of an injury or a fall. This kind
-                                of situation can damage the hip and cause chronic pain.
-                            </li>
-                        </div>
-
-                        <div class="wow mt-5 fadeInLeft" data-wow-delay="0.3s">
-                            <h4>What are the benefits of shockwave therapy?</h4>
-                            <p class="mb-3 mt-3">There are several benefits of shockwave therapy to patients, such as
-                                satisfaction from clinical trials, high success rate, mobility, and improvement in daily
-                                living. Other benefits of shockwave therapy include:</p>
-                            <div class="container mt-2">
-                                <ul class="wow mt-4 fadeInLeft" data-wow-delay="0.4s">
-                                    <li class="mb-2">Stimulates blood flow</li>
-                                    <li class="mb-2">It is non-invasive and non-surgical</li>
-                                    <li class="mb-2">Reverses chronic inflammation</li>
-                                    <li class="mb-2">Release trigger points</li>
-                                    <li class="mb-2">Dissolves calcium build-up</li>
-                                    <li class="mb-2">Accelerates healing </li>
-                                    <li class="mb-2">Medication is not needed </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="wow mt-5 fadeInLeft" data-wow-delay="0.6s">
-                            <h4>What you will expect from a shockwave therapy treatment</h4>
-                            <p class="mb-3 mt-3">During or before you begin your treatment, you will need to attend an
-                                inclusive consultation where you can discuss your issues to know your health issues or
-                                pain related to the treatment you are about to receive. </p>
-                            <p class="mb-3 mt-3">Shockwave therapy treatment will be discussed in three steps:</p>
-                        </div>
-
-                        <div class="wow mt-5 mb-6 fadeInLeft" data-wow-delay="0.5s">
-                            <h5>Step one: Locate the area</h5>
-                            <p class="mb-3 mt-3 ">The area you want to treat can be located using palpation to deliver
-                                the therapy. This step ensures that the specific area that needs to be treated should be
-                                given the attention required and discover the other area that needs to ease your pain
-                                management. </p>
-
-                        </div>
-
-                        <div class="wow mt-5 mb-6 fadeInLeft" data-wow-delay="0.5s">
-                            <h5>Step Two: The application of Gel</h5>
-                            <p class="mb-3 mt-3 ">After locating the part that needs to be treated, you should add a
-                                sufficient amount of gel on the skin’s surface of the skin to transfer the acoustic
-                                waves to move smoothly around the body tissues. </p>
-                        </div>
-
-                        <div class="wow mt-5 mb-6 fadeInLeft" data-wow-delay="0.5s">
-                            <h5>Step Three: The initiation of the shockwave device.</h5>
-                            <p class="mb-3 mt-3 "> The shockwave device is used for treatment, and it is painless. The
-                                shockwave applicator is pushed against the area that needs to be treated. The therapy
-                                takes 10-15 minutes, depending on the location that needs to be treated.</p>
-                        </div>
-                        <div class="wow mt-5 mb-6 fadeInLeft" data-wow-delay="0.5s">
-                            <h4>Begin your radial shockwave therapy today!</h4>
-                            <p class="mb-3 mt-3 ">Do you feel any pain and would love to try out radial shockwave
-                                therapy? We have got you covered. We have therapists who are training in providing this
-                                form of therapy. When you arrive at Family Physiotherapy, they will examine and educate
-                                you more about this therapeutic care. We assure you that radial shockwave therapy is
-                                safe with no side effects before and after treatment. Contact Family Physiotherapy to
-                                schedule an appointment.</p>
-                        </div>
                     </div>
 
+                    
                     <div class="col-lg-4 col-md-12 d-flex flex-column align-items-center">
                         <div class="card border-success d-flex  mt-4 mb-3 wow fadeInRight" data-wow-delay="0.2s"
                             style="max-width:18rem; background-color:white ">
@@ -387,19 +277,19 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="text-success  mb-4"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapate's Clinic</h4>
+                            <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos
                                 autem dolores laudantium quia, qui similique
                             </p>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-success text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-success text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-suucess text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-success text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
@@ -461,6 +351,7 @@
         <!-- Copyright End -->
 
         <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
         <!-- JavaScript Libraries -->
