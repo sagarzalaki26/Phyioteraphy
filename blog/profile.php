@@ -1,17 +1,29 @@
 <?php
-include 'db.php';
 session_start();
+require 'db.php';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
-$id = $_SESSION['user_id'];
-$result = $conn->query("SELECT * FROM users WHERE id = $id");
-$user = $result->fetch_assoc();
+$user_id = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $current_password = $_POST['current_password'];
+    $new_password = $_POST['new_password'];
 
-    $conn->query("UPDATE users SET username = '$username', password = '$password' WHERE id = $id");
-    header("Location: dashboard.php");
+    $query = "SELECT password FROM users WHERE id = $user_id";
+    $result = mysqli_query($conn, $query);
+    $user = mysqli_fetch_assoc($result);
+
+    if (password_verify($current_password, $user['password'])) {
+        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+        $update_query = "UPDATE users SET password = '$hashed_password' WHERE id = $user_id";
+        mysqli_query($conn, $update_query);
+        $success = "Password updated successfully";
+    } else {
+        $error = "Current password incorrect";
+    }
 }
 ?>
 
@@ -80,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
       </header>
       <main class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        <form action="" method="post">
+        <form  method="post">
         <div id="notification" class="hidden mb-8 p-4 rounded-md bg-green-50 border border-green-200">
           <div class="flex">
             <div class="flex-shrink-0">
@@ -107,17 +119,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="px-4 py-5 sm:p-6 space-y-6">
             <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div class="sm:col-span-3">
-                <label class="block text-sm font-medium text-gray-700">Current Username</label>
+                <label class="block text-sm font-medium text-gray-700">Current Password</label>
                 <div class="mt-1">
-                  <input type="text" value="sarahanderson" disabled
+                  <input type="text" name="current_password" placeholder="Current Password" 
                     class="bg-gray-50 block w-full border-gray-300 rounded-md shadow-sm  focus:ring-green-500 focus:border-green-500 sm:text-sm">
                 </div>
               </div>
 
               <div class="sm:col-span-3">
-                <label class="block text-sm font-medium text-gray-700">New Username</label>
+                <label class="block text-sm font-medium text-gray-700">New Password</label>
                 <div class="mt-1">
-                  <input type="text" name="Username" value="<?= $user['username'] ?>" required
+                  <input type="text"  name="new_password" placeholder="New Password" required
                     class="block w-full border-green-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm">
                 </div>
               </div>
@@ -130,30 +142,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
               </div>
 
-              <div class="sm:col-span-4">
-                <label class="block text-sm font-medium text-gray-700">Email</label>
-                <div class="mt-1">
-                  <input type="email" value="sarah.anderson@example.com"
-                    class="block w-full border-gray-300 rounded-md shadow-sm  focus:ring-green-500 focus:border-green-500 sm:text-sm">
-                </div>
-              </div>
+              
 
               <div class="sm:col-span-6">
-                <h3 class="text-lg font-medium text-gray-900 mb-4">Change Password</h3>
                 
 
-                  <div class="sm:col-span-2"> <label class="block text-sm font-medium text-gray-700">New
-                      Password</label>
-                    <div class="mt-1 relative"> <input type="password"
-                        class="block w-full border-gray-300 rounded-md shadow-sm  focus:ring-green-500 focus:border-green-500 sm:text-sm">
-                      <button class="absolute inset-y-0 right-0 pr-3 flex items-center">
-                        <i class="fas fa-eye text-gray-400"></i>
-                      </button>
-                    </div>
-                  </div>
-
                   
-                </div>
               </div>
             </div>
           </div>
