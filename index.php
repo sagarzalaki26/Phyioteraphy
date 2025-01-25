@@ -1,6 +1,6 @@
 <?php
 require 'blog/db.php';
-$query = "SELECT * FROM blogs ORDER BY created_at DESC";
+$query = "SELECT * FROM blogs ORDER BY id DESC LIMIT 3";
 $result = mysqli_query($conn, $query);
 ?>
 
