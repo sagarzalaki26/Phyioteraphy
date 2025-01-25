@@ -11,7 +11,7 @@ $result = mysqli_query($conn, $query);
 
 <head>
     <meta charset="utf-8">
-    <title>Dr.Dhapate's Clinic</title>
+    <title>Dr.Dhapte's Clinic</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -83,8 +83,8 @@ $result = mysqli_query($conn, $query);
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="text-success m-0"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapate's Clinic</h1>
+            <a href="index.php" class="navbar-brand p-0">
+                <h1 class="text-success m-0"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapte's Clinic</h1>
                 <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -92,7 +92,7 @@ $result = mysqli_query($conn, $query);
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="index.php" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <div class="nav-item dropdown">
                         <a href="service.html" class="nav-item nav-link">Services</a>
@@ -130,7 +130,7 @@ $result = mysqli_query($conn, $query);
         <div class="container text-center py-5" style="max-width: 900px;">
             <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Physiotherapy Blog</h1>
                 <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
                     <li class="breadcrumb-item active text-success">Blog</li>
                 </ol>
@@ -202,7 +202,7 @@ $result = mysqli_query($conn, $query);
             <div class="row g-5">
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                        <h4 class="text-success mb-4"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapate's Clinic</h4>
+                        <h4 class="text-success mb-4"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapte's Clinic</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos
                             autem
                             dolores laudantium quia, qui similique
