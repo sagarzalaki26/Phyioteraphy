@@ -163,7 +163,7 @@ $result = mysqli_query($conn, $query);
                         </div>
                         <div class="blog-centent p-4">
                             <div class="d-flex justify-content-between mb-4">
-                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-success"></i> 01 Jan 2045
+                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-success"></i><?= htmlspecialchars($blog['created_at']) ?>
                                 </p>
                                 
                             </div>
