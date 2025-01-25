@@ -80,7 +80,7 @@ $blog = mysqli_fetch_assoc($result);
                         <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find
                             A Location</a>
                         <a href="#" class="text-light me-4"><i
-                                class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
+                                class="fas fa-phone-alt text-primary me-2"></i>+91-9270919090</a>
                         <a href="#" class="text-light me-0"><i
                                 class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
                     </div>
