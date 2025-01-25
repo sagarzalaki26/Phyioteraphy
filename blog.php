@@ -106,14 +106,15 @@ $result = mysqli_query($conn, $query);
                         <div class="dropdown-menu m-0">
                             <a href="appointment.html" class="dropdown-item">Appointment</a>
                             <a href="feature.html" class="dropdown-item">Features</a>
-                            <a href="blog.html" class="dropdown-item active">Our Blog</a>
+                            <a href="blog.php" class="dropdown-item active">Our Blog</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             
                         </div>
                     </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                 </div>
-                <a href="contact.html" class="nav-item  te nav-link">Contact Us</a>
+          
             </div>
             <a href="appointment.html" 
                 class="btn btn-success rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book
@@ -163,7 +164,7 @@ $result = mysqli_query($conn, $query);
                         </div>
                         <div class="blog-centent p-4">
                             <div class="d-flex justify-content-between mb-4">
-                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-success"></i> 01 Jan 2045
+                                <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-success"></i><?= htmlspecialchars($blog['created_at']) ?>
                                 </p>
                                 
                             </div>
