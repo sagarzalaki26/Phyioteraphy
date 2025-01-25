@@ -106,7 +106,7 @@ $blog = mysqli_fetch_assoc($result);
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Terapia</h1>
+                    <h1 class="text-success m-0"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapate's Clinic</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -125,13 +125,12 @@ $blog = mysqli_fetch_assoc($result);
                                 <a href="blog.html" class="dropdown-item">Our Blog</a>
                                 <a href="team.html" class="dropdown-item">Our Team</a>
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link ">Contact Us</a>
                     </div>
                     <a href="appointment.html"
-                        class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book
+                        class="btn btn-success rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book
                         Appointment</a>
                 </div>
             </nav>
@@ -152,11 +151,16 @@ $blog = mysqli_fetch_assoc($result);
             </div>
         </div>
         <!-- Header End -->
+        <style>
+            .text-justify {
+                text-align: justify;
+            }
+        </style>
 
         <section>
             <div class="container mt-4 ">
                 <div class="row ">
-                    <div class="col-8  ">
+                    <div  class="col-8 text-justify" >
                         <?= $blog['content'] ?>
 
 
@@ -166,7 +170,7 @@ $blog = mysqli_fetch_assoc($result);
                     </div>
 
                     
-                    <div class="col-lg-4 col-md-12 d-flex flex-column align-items-center">
+                    <div class="col-lg-4 col-md-12 d-flex flex-column align-items-center align-items-md-start">
                         <div class="card border-success d-flex  mt-4 mb-3 wow fadeInRight" data-wow-delay="0.2s"
                             style="max-width:18rem; background-color:white ">
                             <div class="card-header text-white ">
@@ -277,19 +281,19 @@ $blog = mysqli_fetch_assoc($result);
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>
+                            <h4 class="text-success mb-4"><i class="fas fa-star-of-life me-3"></i>Dr. Dhapate's Clinic</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos
                                 autem dolores laudantium quia, qui similique
                             </p>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-success text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-success text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-success text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                <a class="btn-square btn btn-success text-white rounded-circle mx-1" href=""><i
                                         class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
@@ -339,9 +343,7 @@ $blog = mysqli_fetch_assoc($result);
                                 Name</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+    
                         Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By
                         <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
                     </div>
@@ -350,9 +352,7 @@ $blog = mysqli_fetch_assoc($result);
         </div>
         <!-- Copyright End -->
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
-
+        
 
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
