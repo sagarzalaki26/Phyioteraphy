@@ -86,7 +86,7 @@ $result = mysqli_query($conn, $query);
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
-                <h1 class="text-success m-0"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapate's Clinic</h1>
+                <h1 class="text-success m-0"><i class="fas fa-star-of-life me-3"></i>Dr.Dhapte's Clinic</h1>
                 <!-- <img src="img/download (1).jpg" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
